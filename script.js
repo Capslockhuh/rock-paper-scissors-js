@@ -19,7 +19,12 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, initialPlayerChoice) {
-    playerChoice = initialPlayerChoice.toLowerCase(); // Makes the playerChoice variable case-insensitive
+    initialPlayerChoice = prompt("Choose rock, paper or scissors"); //Display the prompt window and let the user enter their choice
+    if (initialPlayerChoice == null) {
+        return "Game cancelled";
+    } else {
+        playerChoice = initialPlayerChoice.toLowerCase(); //Make the player's choice case-insensitive
+    }
 
     // The main code that decides the result
     if (computerChoice == playerChoice) {
@@ -28,6 +33,8 @@ function playRound(computerChoice, initialPlayerChoice) {
         return "You win!";
     } else if ((computerChoice == "rock" && playerChoice == "scissors") || (computerChoice == "paper" && playerChoice == "rock") || (computerChoice == "scissors" && playerChoice == "paper")) {
         return "You lose..."
+    } else {
+        return "You didn't enter a valid value!";
     }
 }
 
@@ -45,7 +52,7 @@ function game() {
     let points = 0
     let computerPoints = 0
     for (let i = 1; i <= 5; i++) {
-        let result = playRound(getComputerChoice(), "rock");
+        let result = playRound(getComputerChoice(), "");
         console.log(`Round ${i}: \n`);
         console.log(result)
 
