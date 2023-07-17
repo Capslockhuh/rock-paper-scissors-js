@@ -17,9 +17,12 @@ function getComputerChoice() {
     return choice
 }
 
-console.log(getComputerChoice()); //debugging
-
-
 function playRound(computerChoice, playerChoice) {
-
+    if (computerChoice == playerChoice) {
+        return "It's a draw!";
+    } else if ((computerChoice == "rock" && playerChoice == "paper") || (computerChoice == "paper" && playerChoice == "scissors") || (computerChoice == "scissors" && playerChoice == "rock")) {
+        return "You win!";
+    } else if ((computerChoice == "rock" && playerChoice == "scissors") || (computerChoice == "paper" && playerChoice == "rock") || (computerChoice == "scissors" && playerChoice == "paper")) {
+        return "You lose..."
+    }
 }
