@@ -14,7 +14,12 @@ function getComputerChoice() {
             break;
     }
 
-    console.log(choice); //debugging
+    return choice
 }
 
-getComputerChoice()
+console.log(getComputerChoice()); //debugging
+
+
+function playRound(computerChoice, playerChoice) {
+
+}
