@@ -2,6 +2,7 @@ function getComputerChoice() {
     let num = Math.floor(Math.random() * (4 - 1) + 1);
     let choice = " ";
     
+    // Asign the value of choice based on a random number between 1 and 3
     switch (num) {
         case 1:
             choice = "rock";
@@ -17,7 +18,10 @@ function getComputerChoice() {
     return choice
 }
 
-function playRound(computerChoice, playerChoice) {
+function playRound(computerChoice, initialPlayerChoice) {
+    playerChoice = initialPlayerChoice.toLowerCase(); // Makes the playerChoice variable case-insensitive
+
+    // The main code that decides the result
     if (computerChoice == playerChoice) {
         return "It's a draw!";
     } else if ((computerChoice == "rock" && playerChoice == "paper") || (computerChoice == "paper" && playerChoice == "scissors") || (computerChoice == "scissors" && playerChoice == "rock")) {
@@ -26,3 +30,5 @@ function playRound(computerChoice, playerChoice) {
         return "You lose..."
     }
 }
+
+console.log(playRound(getComputerChoice(), "Rock"));
