@@ -31,4 +31,40 @@ function playRound(computerChoice, initialPlayerChoice) {
     }
 }
 
-console.log(playRound(getComputerChoice(), "Rock"));
+function getFinalScore(yourPoints, otherPoints) {
+    if (yourPoints > otherPoints) {
+        return "You won the game!";
+    } else if (yourPoints == otherPoints) {
+        return "The game resulted in a draw";
+    } else {
+        return "You lost :(";
+    }
+}
+
+function game() {
+    let points = 0
+    let computerPoints = 0
+    for (let i = 1; i <= 5; i++) {
+        let result = playRound(getComputerChoice(), "rock");
+        console.log(`Round ${i}: \n`);
+        console.log(result)
+
+        switch (result) {
+            case "You win!":
+                points++;
+                computerPoints--;
+                break;
+            case "You lose...":
+                points--;
+                computerPoints++;
+                break;
+            default:
+                break;
+    }
+}
+    console.log(`----------\n Your points: ${points}\n Computer's points ${computerPoints}`);
+    console.log(`Final result: \n ${getFinalScore(points, computerPoints)}`);
+    return;
+}
+
+game();
