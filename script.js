@@ -49,10 +49,12 @@ function getFinalScore(yourPoints, otherPoints) {
 }
 
 function game() {
+    // Reset the points during a new game
     let points = 0
     let computerPoints = 0
     for (let i = 1; i <= 5; i++) {
         let result = playRound(getComputerChoice(), "");
+        // Display this every time the playRound(...) function is called in this loop
         console.log(`Round ${i}: \n`);
         console.log(result)
 
@@ -69,6 +71,7 @@ function game() {
                 break;
     }
 }
+    // Ending message
     console.log(`----------\n Your points: ${points}\n Computer's points ${computerPoints}`);
     console.log(`Final result: \n ${getFinalScore(points, computerPoints)}`);
     return;
