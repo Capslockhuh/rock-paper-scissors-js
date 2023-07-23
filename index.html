@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,23 +14,23 @@
     </div>
 
     <div id="selection-container">
-        <p class="selection">choose: </p>
-        <p class="selection"></p>
+        <p class="selection">choice:&nbsp;</p> <!-- the &nbsp; character is for added blank space-->
+        <p class="selection choice"> _</p>
     </div>    
 
     <div id="multiple-buttons">
         <div class="button-container">
-            <button id="rock-button">rock</button>
+            <button id="rock" class="btn">rock</button>
             <p>rock</p>
         </div>
 
         <div class="button-container">
-            <button id="paper-button">paper</button>
+            <button id="paper" class="btn">paper</button>
             <p>paper</p>
         </div>
 
         <div class="button-container">
-            <button id="scissors-button">scissors</button>
+            <button id="scissors" class="btn">scissors</button>
             <p>scissors</p>
         </div>
     </div>

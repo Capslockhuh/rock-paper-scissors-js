@@ -19,7 +19,6 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, initialPlayerChoice) {
-    initialPlayerChoice = prompt("Choose rock, paper or scissors"); //Display the prompt window and let the user enter their choice
     if (initialPlayerChoice == null) {
         return "Game cancelled";
     } else {
@@ -77,4 +76,14 @@ function game() {
     return;
 }
 
-game();
+const buttons = document.querySelectorAll(".btn");
+const choiceDisplay = document.querySelector(".choice")
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      console.log(playRound(getComputerChoice(), button.id));
+      choiceDisplay.textContent = button.id;
+    });
+  });
+
