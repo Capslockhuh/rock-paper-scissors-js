@@ -18,13 +18,7 @@ function getComputerChoice() {
     return choice
 }
 
-function playRound(computerChoice, initialPlayerChoice) {
-    if (initialPlayerChoice == null) {
-        return "Game cancelled";
-    } else {
-        playerChoice = initialPlayerChoice.toLowerCase(); //Make the player's choice case-insensitive
-    }
-
+function playRound(computerChoice, playerChoice) {
     // The main code that decides the result
     if (computerChoice == playerChoice) {
         return "It's a draw!";
@@ -77,13 +71,22 @@ function game() {
 }
 
 const buttons = document.querySelectorAll(".btn");
-const choiceDisplay = document.querySelector(".choice")
+const choiceDisplay = document.querySelector(".choice");
+const PlayerVersus = document.querySelector("#player-selection");
+const computerVersus = document.querySelector("#computer-selection");
+
+let playerSelection = ""
 
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
-      console.log(playRound(getComputerChoice(), button.id));
-      choiceDisplay.textContent = button.id;
+        playerSelection = button.id;
     });
   });
+
+const roundNum = document.querySelector("#round");
+const playerPoints = document.querySelector("#player-points");
+const computerPoints = document.querySelector("#computer-points")
+
+
 
