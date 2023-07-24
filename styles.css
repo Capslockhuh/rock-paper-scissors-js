@@ -1,3 +1,12 @@
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
 #title-container {
     display: flex;
     flex: 1;
@@ -102,4 +111,19 @@
     justify-content: space-around;
     align-items: center;
     background-color: #E5E7EB;
+}
+
+.footer {
+    display: flex;
+    flex: 1;
+    background-color: #E5E7EB;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 45px;
+    margin-bottom: 0px;
+
+}
+
+.boundled-text {
+    display: inline;
 }

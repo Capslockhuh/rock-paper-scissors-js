@@ -8,53 +8,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="title-container">
-        <p id="title">Rock, Paper, Scissors</p>
-        <p id="smaller-title">.js</p>
-    </div>   
+        <div id="title-container">
+            <p id="title">Rock, Paper, Scissors</p>
+            <p id="smaller-title">.js</p>
+        </div>   
 
-    <div class="multiple-icons">
-        <div class="vertical-container">
-            <button id="rock" class="btn"><img src="icons/rock-icon.jpeg" alt="rock icon" class="icon"></button>
-            <p class="detail">rock</p>
+        <div class="multiple-icons">
+            <div class="vertical-container">
+                <button id="rock" class="btn"><img src="icons/rock-icon.jpeg" alt="rock icon" class="icon"></button>
+                <p class="detail">rock</p>
+            </div>
+
+            <div class="vertical-container">
+                <button id="paper" class="btn"><img src="icons/paper-icon.jpeg" alt="paper icon" class="icon"></button>
+                <p class="detail">paper</p>
+            </div>
+
+            <div class="vertical-container">
+                <button id="scissors" class="btn"><img src="icons/scissors-icon.jpeg" alt="scissors button" class="icon"></button>
+                <p class="detail">scissors</p>
+            </div>
         </div>
 
-        <div class="vertical-container">
-            <button id="paper" class="btn"><img src="icons/paper-icon.jpeg" alt="paper icon" class="icon"></button>
-            <p class="detail">paper</p>
+        <div id="versus-container">
+            <p id="player-selection" class="subtext choice">_</p>
+            <p class="subtext middle">vs.</p>
+            <p id="computer-selection" class="subtext">_</p>
         </div>
 
-        <div class="vertical-container">
-            <button id="scissors" class="btn"><img src="icons/scissors-icon.jpeg" alt="scissors button" class="icon"></button>
-            <p class="detail">scissors</p>
-        </div>
-    </div>
-
-    <div id="versus-container">
-        <p id="player-selection" class="subtext choice">_</p>
-        <p class="subtext middle">vs.</p>
-        <p id="computer-selection" class="subtext">_</p>
-    </div>
-
-    <div id="winner-container">
-        <p id="winner" class="subtext middle">_</p>
-    </div>
-
-    <div class="stats-container">
-        <div class="vertical-container">
-            <p class="subtext">Your wins</p>
-            <p id="player-wins" class="subtext">0</p>
+        <div id="winner-container">
+            <p id="winner" class="subtext middle">_</p>
         </div>
 
-        <div class="horizontal-container">
-            <p class="subtext">Round&nbsp;</p> <!-- the &nbsp; character is for added blank space-->
-            <p id="round" class="subtext">0</p>
+        <div class="stats-container">
+            <div class="vertical-container">
+                <p class="subtext">Your wins</p>
+                <p id="player-wins" class="subtext">0</p>
+            </div>
+
+            <div class="horizontal-container">
+                <p class="subtext">Round&nbsp;</p> <!-- the &nbsp; character is for added blank space-->
+                <p id="round" class="subtext">0</p>
+            </div>
+
+            <div class="vertical-container">
+                <p class="subtext">Computer's wins</p>
+                <p id="computer-wins" class="subtext">0</p>
+            </div>
         </div>
 
-        <div class="vertical-container">
-            <p class="subtext">Computer's wins</p>
-            <p id="computer-wins" class="subtext">0</p>
+    <div class="footer">
+        <div id="boundled-text">
+            <p class="detail">Made by Capslockhuh for&nbsp;</p>
+            <a href="https://www.theodinproject.com" class="detail">The Odin Project</a>
         </div>
+        <a href="https://github.com/Capslockhuh/rock-paper-scissors-js" class="detail">view the project on GitHub</a>
+        <a class="detail">play the original version</a>
     </div>
 </body>
 </html>
