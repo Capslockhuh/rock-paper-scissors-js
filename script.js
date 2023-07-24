@@ -35,52 +35,36 @@ function playRound(computerChoice, playerChoice) {
     }
 }
 
-function countPoints(result) {
-
-    let points = 0;
-    let computerPoints = 0;
-
-    playerPoints.textContent = points;
-    computersPoints.textContent = computerPoints;
-
-        switch (result) {
-            case "You win!":
-                points++;
-                computerPoints--;
-                assignPoints(points, computerPoints)
-                break;
-            case "You lose...":
-                points--;
-                computerPoints++;
-                assignPoints(points, computerPoints)
-                break;
-            default:
-                break;
-    }
+// Assign win numbers to corresponding elements on the DOM tree
+function assignWins(player, computer) {
+    playerWins.textContent = player;
+    computerWins.textContent = computer;
     return;
 }
 
-function assignPoints(player, computer) {
-    playerPoints.textContent = player;
-    computersPoints.textContent = computer;
-    return;
-}
-
+// DOM manipulation
 const buttons = document.querySelectorAll(".btn");
 const PlayerVersus = document.querySelector("#player-selection");
 const computerVersus = document.querySelector("#computer-selection");
 const winner = document.querySelector("#winner");
 
 const roundNum = document.querySelector("#round");
-const playerPoints = document.querySelector("#player-points");
-const computersPoints = document.querySelector("#computer-points")
+const playerWins = document.querySelector("#player-wins");
+const computerWins = document.querySelector("#computer-wins")
 
+// Set all the values to default
 let playerSelection = ""
 computerVersus.textContent = ""
 let round = 0;
+let pWins = 0;
+let cWins = 0;
 
+// DOM manipulation
 roundNum.textContent = round;
+playerWins.textContent = pWins;
+computerWins.textContent = cWins;
 
+// Runs every time a buttton is clicked by the player
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
@@ -88,8 +72,21 @@ buttons.forEach((button) => {
         let result = playRound(getComputerChoice(), playerSelection);
         winner.textContent = result;
 
+        // Assign wins based on the game's result
+        switch (result) {
+            case "You win!":
+                pWins++;
+                assignWins(pWins, cWins)
+                break;
+            case "You lose...":
+                cWins++;
+                assignWins(pWins, cWins)
+                break;
+            default:
+                break;
+    }
 
-        countPoints(result);
+        // Count the round number
         round++;
         roundNum.textContent = round;
     });
