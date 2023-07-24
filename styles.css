@@ -43,7 +43,6 @@
 
 .horizontal-container {
     display: flex;
-    flex: 1;
     justify-content: center;
     align-items: center;
 }
@@ -71,4 +70,36 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+/* image sizing */
+.icon {
+    width: 204.8px;
+    height: auto;
+    transition-duration: 0.5s;
+}
+
+
+.detail {
+    font-family: Helvetica, sans-serif;
+    size: 11px;
+}
+
+.btn {
+    appearance: none;
+    padding: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.icon:hover {
+    width: 224.8px;
+    height: auto;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #E5E7EB;
 }
