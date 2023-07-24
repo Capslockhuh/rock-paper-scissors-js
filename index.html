@@ -11,12 +11,7 @@
     <div id="title-container">
         <p id="title">Rock, Paper, Scissors</p>
         <p id="smaller-title">.js</p>
-    </div>
-
-    <div id="selection-container">
-        <p class="selection">choice:&nbsp;</p> <!-- the &nbsp; character is for added blank space-->
-        <p class="selection choice"> _</p>
-    </div>    
+    </div>   
 
     <div class="multiple-icons">
         <div class="vertical-container">
@@ -36,30 +31,29 @@
     </div>
 
     <div id="versus-container">
-        <p id="player-selection" class="versus choice">_</p>
-        <p class="versus middle">vs.</p>
-        <p id="computer-selection" class="versus">_</p>
+        <p id="player-selection" class="subtext choice">_</p>
+        <p class="subtext middle">vs.</p>
+        <p id="computer-selection" class="subtext">_</p>
     </div>
 
     <div id="winner-container">
-        <p id="winner" class="versus middle">_</p>
-        <p class="versus middle">&nbsp;wins!</p>
+        <p id="winner" class="subtext middle">_</p>
     </div>
 
     <div class="multiple-icons">
         <div class="vertical-container">
-            <p>Your points:</p>
-            <p id="player-points">0</p>
+            <p class="subtext">points:</p>
+            <p id="player-points" class="subtext">0</p>
         </div>
 
         <div class="horizontal-container">
-            <p>Round&nbsp;</p>
-            <p id="round">0</p>
+            <p class="subtext">Round&nbsp;</p> <!-- the &nbsp; character is for added blank space-->
+            <p id="round" class="subtext">0</p>
         </div>
 
         <div class="vertical-container">
-            <p>Computer's points</p>
-            <p id="computer-points">0</p>
+            <p class="subtext">Computer's points</p>
+            <p id="computer-points" class="subtext">0</p>
         </div>
     </div>
 </body>

@@ -19,6 +19,10 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, playerChoice) {
+    PlayerVersus.textContent = playerChoice;
+    computerVersus.textContent = computerChoice;
+
+
     // The main code that decides the result
     if (computerChoice == playerChoice) {
         return "It's a draw!";
@@ -31,62 +35,62 @@ function playRound(computerChoice, playerChoice) {
     }
 }
 
-function getFinalScore(yourPoints, otherPoints) {
-    if (yourPoints > otherPoints) {
-        return "You won the game!";
-    } else if (yourPoints == otherPoints) {
-        return "The game resulted in a draw";
-    } else {
-        return "You lost :(";
-    }
-}
+function countPoints(result) {
 
-function game() {
-    // Reset the points during a new game
-    let points = 0
-    let computerPoints = 0
-    for (let i = 1; i <= 5; i++) {
-        let result = playRound(getComputerChoice(), "");
-        // Display this every time the playRound(...) function is called in this loop
-        console.log(`Round ${i}: \n`);
-        console.log(result)
+    let points = 0;
+    let computerPoints = 0;
+
+    playerPoints.textContent = points;
+    computersPoints.textContent = computerPoints;
 
         switch (result) {
             case "You win!":
                 points++;
                 computerPoints--;
+                assignPoints(points, computerPoints)
                 break;
             case "You lose...":
                 points--;
                 computerPoints++;
+                assignPoints(points, computerPoints)
                 break;
             default:
                 break;
     }
+    return;
 }
-    // Ending message
-    console.log(`----------\n Your points: ${points}\n Computer's points ${computerPoints}`);
-    console.log(`Final result: \n ${getFinalScore(points, computerPoints)}`);
+
+function assignPoints(player, computer) {
+    playerPoints.textContent = player;
+    computersPoints.textContent = computer;
     return;
 }
 
 const buttons = document.querySelectorAll(".btn");
-const choiceDisplay = document.querySelector(".choice");
 const PlayerVersus = document.querySelector("#player-selection");
 const computerVersus = document.querySelector("#computer-selection");
+const winner = document.querySelector("#winner");
+
+const roundNum = document.querySelector("#round");
+const playerPoints = document.querySelector("#player-points");
+const computersPoints = document.querySelector("#computer-points")
 
 let playerSelection = ""
+computerVersus.textContent = ""
+let round = 0;
+
+roundNum.textContent = round;
 
 buttons.forEach((button) => {
 
     button.addEventListener('click', () => {
         playerSelection = button.id;
+        let result = playRound(getComputerChoice(), playerSelection);
+        winner.textContent = result;
+
+
+        countPoints(result);
+        round++;
+        roundNum.textContent = round;
     });
   });
-
-const roundNum = document.querySelector("#round");
-const playerPoints = document.querySelector("#player-points");
-const computerPoints = document.querySelector("#computer-points")
-
-
-
