@@ -3,3 +3,5 @@ The classic game of Rock, Paper, Scissors made in JavaScript, playable on a webs
 There's also an old version availible, which is playable from the browser console
 
 for The Odin Project
+
+[See it live](https://capslockhuh.github.io/rock-paper-scissors-js/index.html)
